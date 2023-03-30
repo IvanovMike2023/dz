@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/IvanovMike2023/dz.git/static/css/main.ddc0c80d.css",
+    "main.js": "/IvanovMike2023/dz.git/static/js/main.d11fb756.js",
+    "static/js/787.66cb4309.chunk.js": "/IvanovMike2023/dz.git/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/IvanovMike2023/dz.git/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/IvanovMike2023/dz.git/index.html",
+    "main.ddc0c80d.css.map": "/IvanovMike2023/dz.git/static/css/main.ddc0c80d.css.map",
+    "main.d11fb756.js.map": "/IvanovMike2023/dz.git/static/js/main.d11fb756.js.map",
+    "787.66cb4309.chunk.js.map": "/IvanovMike2023/dz.git/static/js/787.66cb4309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ddc0c80d.css",
+    "static/js/main.d11fb756.js"
+  ]
+}
