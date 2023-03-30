@@ -1,5 +1,5 @@
 import React from 'react'
-import Message from './message/Message'
+import Message, {MessageType} from './message/Message'
 import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
@@ -14,7 +14,7 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+
 
 // структуру объекта не менять
 export const message0: MessageType = {
@@ -24,7 +24,7 @@ export const message0: MessageType = {
         name: 'Some Name',  // можно менять
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
+        text: 'some textsome textsome xtsome text', // можно менять
         time: '22:00', // можно менять
     },
 }
@@ -50,8 +50,7 @@ const HW1 = () => {
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
-
-                {/*для автоматической проверки дз (не менять)*/}
+                {/*для автоматической проверки дз (не менять)                <FriendMessage message={friendMessage0} />*/}
                 <MessageSender M={Message} />
             </div>
         </div>
