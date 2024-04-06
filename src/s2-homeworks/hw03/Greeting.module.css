@@ -8,12 +8,16 @@
 }
 
 .input {
+    border: 2px  #00cc22 solid;
 }
 
-.input:focus {
+input:focus{
+    outline: none;
 }
+
 
 .errorInput {
+    border: 2px #cc0000 solid;
 }
 
 .button {

@@ -18,6 +18,7 @@ const Stand = () => {
                     <SuperInputText
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
+
                         onChange={(e) => setValue(e.currentTarget.value)}
                     />
                 </div>
@@ -43,7 +44,7 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton id={'hw4-super-button-default'} >
                         default
                     </SuperButton>
                 </div>
@@ -91,6 +92,7 @@ const Stand = () => {
                         id={'hw4-super-checkbox-like-old'}
                         checked={stateForAllCheckboxes}
                         onChange={(e) => setChecked(e.currentTarget.checked)}
+                        onChangeChecked={setChecked}
                     />
                 </div>
             </div>

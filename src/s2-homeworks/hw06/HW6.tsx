@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import { restoreState, saveState } from './localStorage/localStorage'
 import s2 from '../../s1-main/App.module.css'
@@ -11,6 +11,8 @@ import s from './HW6.module.css'
  * 3 - сделать стили в соответствии с дизайном
  */
 
+
+
 const HW6 = () => {
     const [value, setValue] = useState<string>('')
 
@@ -19,13 +21,13 @@ const HW6 = () => {
     }
     const restore = () => {
         // делают студенты
-
+        const ttt =restoreState<string>('hw6-editable-span-value', value)
+       setValue(ttt)
     }
 
     return (
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>
-
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
                 <div className={s.editableSpanContainer}>
@@ -41,7 +43,7 @@ const HW6 = () => {
                 </div>
 
                 <div className={s.buttonsContainer}>
-                    <SuperButton id={'hw6-save'} onClick={save}>
+                    <SuperButton  id={'hw6-save'} onClick={save}>
                         Save to ls
                     </SuperButton>
                     <SuperButton
