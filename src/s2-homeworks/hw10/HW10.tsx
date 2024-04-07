@@ -20,15 +20,10 @@ const isLoading2 = useSelector((state:AppStoreType)=>state.loading)
     const isLoading = isLoading2.isLoading//false
     console.log(isLoading2.isLoading)
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
-        //dispatch(loadingAC(true))
-        // setTimeout
-        let timer= setTimeout(()=>{dispatch(loadingAC(true))},0)
-        clearTimeout(timer)
-        //setTimeout(()=>{dispatch(loadingAC(false))},1000)
-
-
+        setTimeout(() => dispatch(loadingAC(false)),1500);
+        Promise.resolve()
+            .then(() => dispatch(loadingAC(true)));
     }
-
     return (
         <div id={'hw10'}>
             <div className={s2.hwTitle}>Homework #10</div>
