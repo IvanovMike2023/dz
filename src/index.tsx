@@ -11,7 +11,7 @@ root.render(
     <React.StrictMode>
         {/*для дз 10*/}
 
-        
+
         <Provider store={store}>
             <App/>
         </Provider>
