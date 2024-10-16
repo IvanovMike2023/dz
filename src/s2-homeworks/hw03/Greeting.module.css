@@ -1,0 +1,39 @@
+.greetingForm {
+}
+
+.inputAndButtonContainer {
+}
+
+.error {
+}
+
+.input {
+    border: 2px  #00cc22 solid;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+.errorInput {
+    border: 2px #cc0000 solid;
+}
+
+.button {
+}
+
+.button:focus {
+}
+
+.button:active {
+}
+
+.button:disabled {
+}
+
+.text {
+}
+
+.greeting {
+}

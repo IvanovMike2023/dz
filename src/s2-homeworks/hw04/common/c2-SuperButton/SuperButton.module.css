@@ -1,0 +1,112 @@
+.button {
+
+
+    background-color: #0080FF;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+
+
+    width: 132px;
+    height: 30px;
+    left: 574px;
+
+}
+
+.disabled {
+
+
+
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+
+
+    width: 133px;
+    height: 30px;
+    left: 574px;
+
+
+    background: #004D99;
+    opacity: 0.5;
+    border-radius: 3px;
+}
+
+.secondary {
+    width: 133px;
+    height: 30px;
+    left: 574px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    background-color: #C9E5FF;
+    color: #0066CC;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.default {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+
+    position: absolute;
+    width: 132px;
+    height: 30px;
+    left: 200px;
+    top: 30px;
+}
+
+.red {
+
+
+
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+
+
+    width: 129px;
+    height: 30px;
+    left: 576px;
+
+
+    /* Danger/100 */
+
+    background: #CC1439;
+    border-radius: 3px;
+}
+
+.default:hover {
+}
+
+.red:hover {
+}
+
+.secondary:hover {
+}
+
+
+.default:active {
+}
+
+.secondary:active {
+}
+
+.red:active {
+}
+
+.button:disabled {
+}
