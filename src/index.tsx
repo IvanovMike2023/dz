@@ -12,7 +12,9 @@ root.render(
         {/*для дз 10*/}
         <Provider store={store}>
             <App/>
-            
+
+
+
         </Provider>
     </React.StrictMode>
 )
