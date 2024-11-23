@@ -16,11 +16,19 @@ import {useSearchParams} from 'react-router-dom'
 const getTechs = (find: string) => {
     return axios
         .get<{ techs: string[] }>(
-            'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test2',
+             'https://samurai.it-incubator.io/api/3.0/homework/test2',
             {params: {find}}
         )
+             //'https://samurai.it-incubator.io/api/3.0/homework/test',
+        //'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test2',
+            //https://samurai.it-incubator.io/api/3.0
+
+.then((res)=>{
+    return (res.data.techs)
+})
         .catch((e) => {
-            alert(e.response?.data?.errorText || e.message)
+            console.log(e.response?.data?.errorText || e.message)
+           // alert(e.response?.data?.errorText || e.message)
         })
 }
 
@@ -35,23 +43,21 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
+               setTechs(res||[])
 
                 // сохранить пришедшие данные
-
                 //
             })
+
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
         // добавить/заменить значение в квери урла
-        // setSearchParams(
-
+        setSearchParams({params: find})
         //
     }
-
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
         sendQuery(params.find || '')
@@ -63,7 +69,6 @@ const HW14 = () => {
             {t}
         </div>
     ))
-
     return (
         <div id={'hw14'}>
             <div className={s2.hwTitle}>Homework #14</div>
