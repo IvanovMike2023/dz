@@ -1,9 +1,9 @@
 import React from 'react'
 
-// добавить в проект иконки и импортировать
-const downIcon = '[\\/]'
-const upIcon = '[/\\]'
-const noneIcon = '[--]'
+// Иконки для сортировки
+const downIcon = '↓' // или можно оставить '[\\/]'
+const upIcon = '↑' // или оставить '[/\$$'
+const noneIcon = '—' // или '[--]'
 
 export type SuperSortPropsType = {
     id?: string
@@ -12,14 +12,23 @@ export type SuperSortPropsType = {
     onChange: (newSort: string) => void
 }
 
-export const pureChange = (sort: string, down: string, up: string) => {
-    // пишет студент, sort: (click) => down (click) => up (click) => '' (click) => down ...
-    return up // исправить
+//Функция для определения нового сортировки при клике
+export const pureChange = (sort: string, down: string, up: string): string => {
+    if (sort === down) {
+        return up // переключение с по убыванию на по возрастанию
+    } else if (sort === up) {
+        return '' // сброс сортировки
+    } else {
+        return down // переключение на по убыванию
+    }
 }
 
 const SuperSort: React.FC<SuperSortPropsType> = (
     {
-        sort, value, onChange, id = 'hw15',
+        sort,
+        value,
+        onChange,
+        id = 'hw15',
     }
 ) => {
     const up = '0' + value
@@ -29,24 +38,19 @@ const SuperSort: React.FC<SuperSortPropsType> = (
         onChange(pureChange(sort, down, up))
     }
 
-    const icon = sort === down
-        ? downIcon
-        : sort === up
-            ? upIcon
-            : noneIcon
+    const icon = (() => {
+        if (sort === down) return downIcon
+        if (sort === up) return upIcon
+        return noneIcon
+    })()
 
     return (
         <span
             id={id + '-sort-' + value}
             onClick={onChangeCallback}
+            style={{ cursor: 'pointer', userSelect: 'none' }}
         >
-            {/*сделать иконку*/}
-            {/*<img*/}
-            {/*    id={id + '-icon-' + sort}*/}
-            {/*    src={icon}*/}
-            {/*/>*/}
-
-            {icon} {/*а это убрать*/}
+            {icon}
         </span>
     )
 }

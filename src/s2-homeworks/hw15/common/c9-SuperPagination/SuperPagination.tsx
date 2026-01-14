@@ -13,17 +13,26 @@ export type SuperPaginationPropsType = {
 
 const SuperPagination: React.FC<SuperPaginationPropsType> = (
     {
-        page, itemsCountForPage, totalCount, onChange, id = 'hw15',
+        page,
+        itemsCountForPage,
+        totalCount,
+        onChange,
+        id = 'hw15',
     }
 ) => {
-    const lastPage = 10 // пишет студент // вычислить количество страниц
+    // вычисление количества страниц
+    const lastPage = Math.ceil(totalCount / itemsCountForPage) || 1;
 
-    const onChangeCallback = (event: any, page: number) => {
-        // пишет студент
+    // обработчик смены страницы
+    const onChangeCallback = (event: React.ChangeEvent<unknown>, pageNumber: number) => {
+        onChange(pageNumber, itemsCountForPage);
     }
 
-    const onChangeSelect = (event: any) => {
-        // пишет студент
+    // обработчик смены количества элементов на страницу
+    const onChangeSelect = (event: React.ChangeEvent<{ value: unknown }>) => {
+        const newCount = event.target.value as number;
+        // при изменении количества элементов обычно возвращаемся к первой странице
+        onChange(1, newCount);
     }
 
     return (
@@ -31,7 +40,8 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
             <Pagination
                 id={id + '-pagination'}
                 sx={{
-                    // стили для Pagination // пишет студент
+                    // стили для Pagination (можно добавить по желанию)
+                    marginRight: '10px'
                 }}
                 page={page}
                 count={lastPage}
@@ -40,24 +50,20 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                 hidePrevButton
             />
 
-            <span className={s.text1}>
-                показать
-            </span>
+            <span className={s.text1}>показать</span>
 
             <SuperSelect
                 id={id + '-pagination-select'}
                 value={itemsCountForPage}
                 options={[
-                    {id: 4, value: 4},
-                    {id: 7, value: 7},
-                    {id: 10, value: 10},
+                    {id: 4, value: "4"},
+                    {id: 7, value: '7'},
+                    {id: 10, value: '10'},
                 ]}
                 onChange={onChangeSelect}
             />
 
-            <span className={s.text2}>
-                строк в таблице
-            </span>
+            <span className={s.text2}>строк в таблице</span>
         </div>
     )
 }
