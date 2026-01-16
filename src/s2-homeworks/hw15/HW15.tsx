@@ -60,7 +60,6 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         setPage(newPage);
         setCount(newCount);
-
         // Обновляем параметры URL
         setSearchParams({ page: String(newPage), count: String(newCount), sort });
         // отправляем запрос
