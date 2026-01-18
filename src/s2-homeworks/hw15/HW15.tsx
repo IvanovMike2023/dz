@@ -55,7 +55,6 @@ const HW15 = () => {
                 setLoading(false);
             });
     };
-
     // обработчик изменения пагинации
     const onChangePagination = (newPage: number, newCount: number) => {
         setPage(newPage);
